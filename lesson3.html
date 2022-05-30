@@ -85,6 +85,11 @@
         var Cylinder = new THREE.Mesh(geometry3, mat);
         Cylinder.position.set(1.5,0,0);
         scene.add(Cylinder);
+        
+        var geometry4 = new THREE.TorusGeometry( 3, 0.1, 16, 100);
+        var Torus = new THREE.Mesh(geometry4, mat);
+        Torus.position.set(0,2,0);
+        scene.add(Torus);
 
 
         update();
