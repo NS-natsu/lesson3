@@ -90,8 +90,16 @@
         Cylinder.position.set(1.5,0,0);
         scene.add(Cylinder);
         
+        //6面分のテクスチャー読み込み
+        var materials = [
+          mat,
+          new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/img6.png")}),
+        ];
+ 
+        var material = new THREE.MeshFaceMaterial(materials); // マテリアルをセット
+        
         var geometry4 = new THREE.TorusGeometry( 4, 1, 16, 100);
-        var Torus = new THREE.Mesh(geometry4, mat);
+        var Torus = new THREE.Mesh(geometry4, material);
         Torus.position.set(0,1,0);
         scene.add(Torus);
 
