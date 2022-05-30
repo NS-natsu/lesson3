@@ -84,22 +84,23 @@
         Sphere.position.set(0,0,0);
         scene.add(Sphere);
 
-        // 円柱を作成
-        var geometry3 = new THREE.CylinderGeometry( 0.2, 0.5, 0.5, 20, 4 );
-        var Cylinder = new THREE.Mesh(geometry3, mat);
-        Cylinder.position.set(1.5,0,0);
-        scene.add(Cylinder);
-        
         //6面分のテクスチャー読み込み
-        var Tmaterials = [
-          mat,
+        var Cmaterials = [
+          mat,mat,
           new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/img6.png")}),
         ];
  
-        var Tmaterial = new THREE.MeshFaceMaterial(Tmaterials); // マテリアルをセット
+        var Cmaterial = new THREE.MeshFaceMaterial(Tmaterials); // マテリアルをセット
+ 
+        // 円柱を作成
+        var geometry3 = new THREE.CylinderGeometry( 0.2, 0.5, 0.5, 20, 4 );
+        var Cylinder = new THREE.Mesh(geometry3, Cmaterial);
+        Cylinder.position.set(1.5,0,0);
+        scene.add(Cylinder);
+        
         
         var geometry4 = new THREE.TorusGeometry( 4, 1, 16, 100);
-        var Torus = new THREE.Mesh(geometry4, Tmaterial);
+        var Torus = new THREE.Mesh(geometry4, mat);
         Torus.position.set(0,1,0);
         scene.add(Torus);
 
