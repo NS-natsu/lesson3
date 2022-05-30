@@ -53,13 +53,17 @@
         var mat = new THREE.MeshPhongMaterial();
         mat.map = texture;
         
+        var stoneTxt = textureLoader.load("stone.jpg");
+        var stoneMat = new Three.MeshPhongMaterial();
+        mat.map = stoneTxt;
+        
+        var bump = textureLoagder.load("stone-bump.jpg");
+        mat.bumpMap = bump;
+        mat.bumpscale = 0.2;
         
         //6面分のテクスチャー読み込み
         var materials = [
-          new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("stone.jpg")}),
-          new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("stone.jpg")}),
-          new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("stone.jpg")}),
-          new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("stone.jpg")}),
+          mat,mat,mat,mat,
           new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/img5.png")}),
           new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/img6.png")}),
         ];
